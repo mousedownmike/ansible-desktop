@@ -11,6 +11,11 @@
     dropbox_version: 2019.02.14
     node_version: 10.x
   tasks:
+    - name: aws_access_key
+      prompt: "AWS Key ID"
+      private: no
+    - name: aws_secret_key
+      prompt: "AWS Secret"
     - name: 'Install packages'
       apt:
         pkg:
