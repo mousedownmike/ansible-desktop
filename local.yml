@@ -13,7 +13,7 @@
   vars_prompt:
     - name: "aws_access_key"
       prompt: "AWS Key ID"
-      private: yes
+      private: no
 
     - name: "aws_secret_key"
       prompt: "AWS Secret"
