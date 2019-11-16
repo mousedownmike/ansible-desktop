@@ -10,12 +10,13 @@
     jb_sha256: 3b9c6cd630e602c845c3f716f735f9748fc2086986f45fbdf6a555484e95c45e
     dropbox_version: 2019.02.14
     node_version: 10.x
-  tasks:
+  vars_prompt:
     - name: aws_access_key
       prompt: "AWS Key ID"
       private: no
     - name: aws_secret_key
       prompt: "AWS Secret"
+  tasks:
     - name: 'Install packages'
       apt:
         pkg:
