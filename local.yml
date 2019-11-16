@@ -42,3 +42,6 @@
       command:
         cmd: /tmp/jetbrains-toolbox-{{ jb_version }}/jetbrains-toolbox
         creates: ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+    - name: 'Install Dropbox'
+      apt:
+        deb: https://linux.dropbox.com/packages/ubuntu/dropbox_{{ dropbox_version }}_amd64.deb
