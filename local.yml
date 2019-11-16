@@ -9,7 +9,7 @@
     jb_version: 1.16.6067
     jb_sha256: 3b9c6cd630e602c845c3f716f735f9748fc2086986f45fbdf6a555484e95c45e
     dropbox_version: 2019.02.14
-    node_version: 0.10
+    node_version: 10.x
   tasks:
     - name: 'Install packages'
       apt:
