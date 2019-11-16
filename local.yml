@@ -1,6 +1,8 @@
 - hosts: localhost
   become: true
   module_defaults:
+    apt:
+      force_apt_get: yes
   vars:
     tf_version: 0.12.14
     tf_sha256: 8db6b396eb2626f18bf5e98af824645bb96d8290e2ab761b2dace3a2574b8cee
