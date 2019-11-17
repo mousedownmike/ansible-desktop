@@ -10,6 +10,8 @@
     jb_sha256: 3b9c6cd630e602c845c3f716f735f9748fc2086986f45fbdf6a555484e95c45e
     dropbox_version: 2019.02.14
     node_version: 10.x
+    smartgit_version: 19_1_4
+    smartsync_version: 4_0_3
   vars_prompt:
     - name: aws_access_key
       prompt: "AWS Key ID"
@@ -65,3 +67,10 @@
     - name: 'Install NodeJS'
       apt:
         name: nodejs
+
+    - name: 'Install Smart Git {{ smartgit_version }}'
+      apt:
+        deb: https://www.syntevo.com/downloads/smartgit/smartgit-{{ smartgit_version }}.deb
+    - name: 'Install Smart Sync {{ smartsync_version }}'
+      apt:
+        deb: https://www.syntevo.com/downloads/smartsynchronize/smartsynchronize-{{ smartsync_version }}.deb
