@@ -31,6 +31,7 @@
         name: go
         classic: yes
         channel: latest/stable
+
     - name: 'Download Terraform {{ tf_version }}'
       get_url:
         url: https://releases.hashicorp.com/terraform/{{ tf_version }}/terraform_{{ tf_version }}_linux_amd64.zip
@@ -40,6 +41,7 @@
       unarchive:
         src: /tmp/terraform_{{ tf_version }}_linux_amd64.zip
         dest: /usr/local/bin
+
     - name: 'Download JetBrains Toolbox {{ jb_version }}'
       get_url:
         url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-{{ jb_version }}.tar.gz
@@ -53,6 +55,7 @@
       command:
         cmd: /tmp/jetbrains-toolbox-{{ jb_version }}/jetbrains-toolbox
         creates: ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+
     - name: 'Install Dropbox'
       apt:
         deb: https://linux.dropbox.com/packages/ubuntu/dropbox_{{ dropbox_version }}_amd64.deb
@@ -70,7 +73,8 @@
 
     - name: 'Install Smart Git {{ smartgit_version }}'
       apt:
-        deb: https://www.syntevo.com/downloads/smartgit/smartgit-{{ smartgit_version }}.deb
+        deb: https://www.syntevo.com/downloads/smartgit/smartgit-19_1_4.deb
+
     - name: 'Install Smart Sync {{ smartsync_version }}'
       apt:
         deb: https://www.syntevo.com/downloads/smartsynchronize/smartsynchronize-{{ smartsync_version }}.deb
