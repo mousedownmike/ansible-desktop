@@ -20,7 +20,7 @@
           - unzip
           - git
           - solaar
-          - python3-pip
+          - python-pip
     - name: Ensure botocore and boto3 modules are installed
       pip:
         name: [ "boto3", "botocore"]
