@@ -13,12 +13,6 @@
     smartgit_version: "19_1_4"
     smartsync_version: "4_0_3"
   tasks:
-    - name: Ensure botocore and boto3 modules are installed
-      pip:
-        name: [ "boto3", "botocore"]
-        extra_args:  "--user"
-    - name: 'SSM Test'
-      debug: msg="{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id' ) }}"
     - name: 'Install packages'
       apt:
         pkg:
@@ -26,6 +20,14 @@
           - unzip
           - git
           - solaar
+          - pip
+    - name: Ensure botocore and boto3 modules are installed
+      pip:
+        name: [ "boto3", "botocore"]
+        extra_args:  "--user"
+    - name: 'SSM Test'
+      debug: msg="{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id' ) }}"
+
     - name: Go
       snap:
         name: go
