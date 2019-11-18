@@ -26,6 +26,7 @@
           - htop
           - unzip
           - git
+          - solaar
     - name: Go
       snap:
         name: go
