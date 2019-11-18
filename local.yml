@@ -12,14 +12,9 @@
     node_version: 10.x
     smartgit_version: "19_1_4"
     smartsync_version: "4_0_3"
-  vars_prompt:
-    - name: aws_access_key
-      prompt: "AWS Key ID"
-      private: yes
-    - name: aws_secret_key
-      prompt: "AWS Secret"
-      private: yes
   tasks:
+    - name: 'SSM Test'
+      debug: msg="{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id' ) }}"
     - name: 'Install packages'
       apt:
         pkg:
