@@ -26,6 +26,7 @@
         name: [ "boto3", "botocore"]
         extra_args:  "--user"
     - name: 'SSM Test'
+      become: mike
       debug: msg="{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id', region='us-east-1' ) }}"
 
     - name: Go
