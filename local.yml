@@ -26,8 +26,10 @@
         name: [ "boto3", "botocore"]
         extra_args:  "--user"
     - name: 'SSM Test'
-      become_user: mike
       debug: msg="{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id', region='us-east-1' ) }}"
+      become: yes
+      become_method: su
+      become_user: mike
 
     - name: Go
       snap:
