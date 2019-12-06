@@ -1,0 +1,28 @@
+- hosts: localhost
+  become: true
+  module_defaults:
+    apt:
+      force_apt_get: yes
+  vars:
+    # https://download.docker.com/linux/ubuntu/dists/disco/pool/stable/amd64/
+    docker_download: 'https://download.docker.com/linux/ubuntu/dists/disco/pool/stable/amd64'
+    containerd_version: 1.2.10-3
+    docker_version: 19.03.3~3-0
+  tasks:
+    - name: 'Install containerd'
+      apt:
+        deb: '{{ docker_download }}/containerd.io_{{ containerd_version }}_amd64.deb'
+    - name: 'Install docker-ce-cli'
+      apt:
+        deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}~ubuntu-disco_amd64.deb'
+    - name: 'Install docker-ce'
+      apt:
+        deb: '{{ docker_download }}/docker-ce_{{ docker_version }}~ubuntu-disco_amd64.deb'
+
+    - name: 'Add docker group'
+      group:
+        name: 'docker'
+    - name: 'Add mike to group'
+      user: name=mike
+            groups=docker
+            append=yes
