@@ -8,6 +8,7 @@
     docker_download: 'https://download.docker.com/linux/ubuntu/dists/disco/pool/stable/amd64'
     containerd_version: 1.2.10-3
     docker_version: 19.03.3~3-0
+    machine_version: v0.16.2
   tasks:
     - name: 'Install containerd'
       apt:
@@ -18,7 +19,16 @@
     - name: 'Install docker-ce'
       apt:
         deb: '{{ docker_download }}/docker-ce_{{ docker_version }}~ubuntu-disco_amd64.deb'
-
+    - name: 'Download docker-machine'
+      get_url:
+        url: 'https://github.com/docker/machine/releases/download/{{ machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
+        dest: /tmp/docker-machine
+    - name: 'Install docker-machine'  
+      copy:
+        src: /tmp/docker-machine
+        dest: /usr/local/bin/docker-machine
+        mode: a+x
+        backup: yes
     - name: 'Add docker group'
       group:
         name: 'docker'
