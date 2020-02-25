@@ -106,3 +106,10 @@
     - name: 'Install AWS CLI'
       command:
         cmd: /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+# TODO Mysql
+# TODO Sublime Key Bindings
+# TODO Sublime Packages
+# TODO SDKMAN!
+# TODO Gradle
+# TODO Groovy
+# TODO JDK 11
