@@ -6,8 +6,8 @@
   vars:
     tf_version: 0.12.14
     tf_sha256: 8db6b396eb2626f18bf5e98af824645bb96d8290e2ab761b2dace3a2574b8cee
-    jb_version: 1.16.6067
-    jb_sha256: 3b9c6cd630e602c845c3f716f735f9748fc2086986f45fbdf6a555484e95c45e
+    jb_version: 1.16.6319
+    jb_sha256: 4e6f333839af8330a09d9d6fdcd6a635c9ca1f0ae239d8f268249dbd095ca880
     dropbox_version: 2019.02.14
     node_version: 10.x
     smartgit_version: "19_1_4"
