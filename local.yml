@@ -10,7 +10,7 @@
     jb_sha256: 4e6f333839af8330a09d9d6fdcd6a635c9ca1f0ae239d8f268249dbd095ca880
     dropbox_version: 2019.02.14
     node_version: 10.x
-    smartgit_version: "19_1_4"
+    smartgit_version: "19_1_6"
     smartsync_version: "4_0_3"
   tasks:
     - name: 'Install packages'
