@@ -28,6 +28,9 @@
         name: [ "boto3", "botocore", "psutil"]
         extra_args:  "--user"
 
+    - name: 'Gnome Terminal'
+      include: terminal.yml
+      
     - name: Go
       snap:
         name: go
@@ -126,8 +129,6 @@
       apt:
         name: java-11-amazon-corretto-jdk
 
-    - name: 'Gnome Terminal'
-      include: terminal.yml
 # TODO SDKMAN!
 # TODO Gradle
 # TODO Groovy
