@@ -94,6 +94,14 @@
     - name: 'Install Sublime 3'
       apt:
         name: sublime-text
+    - name: 'Sublime Keymap'
+      copy:
+        src: "file/Default (Linux).sublime-keymap"
+        dest: "/home/mike/.config/sublime-text-3/Packages/User/"
+    - name: 'Sublime Settings'
+      copy:
+        src: file/Preferences.sublime-settings
+        dest: /home/mike/.config/sublime-text-3/Packages/User/
 
     - name: 'Download AWS CLI Bundle'
       get_url: 
