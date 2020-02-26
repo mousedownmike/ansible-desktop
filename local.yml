@@ -23,9 +23,9 @@
           - python-pip
           - gnome-tweak-tool
           - tmux
-    - name: Ensure botocore and boto3 modules are installed
+    - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
-        name: [ "boto3", "botocore"]
+        name: [ "boto3", "botocore", "psutil"]
         extra_args:  "--user"
 
     - name: Go
