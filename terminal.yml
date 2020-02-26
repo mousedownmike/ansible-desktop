@@ -1,6 +1,6 @@
 ---
 - name: get gnome profile id
-  become: false
+  become_user: mike
   command: dconf list "/org/gnome/terminal/legacy/profiles:/"
   register: dconfprofiles
   changed_when: false
@@ -18,79 +18,79 @@
   changed_when: falsedconf list "/org/gnome/terminal/legacy/profiles:/"
 
 - name: Set profile name
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}visible-name"
     value: "'Default'"
 
 - name: Disable menubar
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/default-show-menubar"
     value: "false"
 
 - name: Set scrollbar-policy
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}scrollbar-policy"
     value: "'never'"
 
 - name: Set foreground-color
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}foreground-color"
     value: "'rgb(255,142,30)'"
 
 - name: Set palette
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}palette"
     value: "['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']"
 
 - name: Set use-theme-colors
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}use-theme-colors"
     value: "false"
 
 - name: Set background-color
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}background-color"
     value: "'rgb(0,0,0)'"
 
 - name: Set use-transparent-background
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}use-transparent-background"
     value: "true"
 
 - name: Set use-theme-transparency
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}use-theme-transparency"
     value: "false"
 
 - name: Set background-transparency-percent
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}background-transparency-percent"
     value: "14"
 
 - name: Set custom-command
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}custom-command"
     value: "'tmux'"
 
 - name: Set use-custom-command
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}use-custom-command"
     value: "true"
 
 - name: Set scrollback-unlimited
-  become: false
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}scrollback-unlimited"
     value: "true"
