@@ -23,28 +23,10 @@
       pip:
         name: [ "boto3", "botocore"]
         extra_args:  "--user"
-    - name: 'SSM Test'
-      debug: 
-          msg: "{{ lookup('aws_ssm', '/mike/mxl-client/user-pool-client-id', region='us-east-1' ) }}"
-      become: yes
-      become_method: su
-      become_user: mike
 
     - name: Go
       snap:
         name: go
-        classic: yes
-        channel: latest/stable
-
-    - name: Goland
-      snap:
-        name: goland
-        classic: yes
-        channel: latest/stable
-
-    - name: Intellij
-      snap:
-        name: intellij-idea-ultimate
         classic: yes
         channel: latest/stable
 
@@ -57,10 +39,6 @@
       unarchive:
         src: /tmp/terraform_{{ tf_version }}_linux_amd64.zip
         dest: /usr/local/bin
-
-    - name: 'Install Dropbox'
-      apt:
-        deb: https://linux.dropbox.com/packages/ubuntu/dropbox_{{ dropbox_version }}_amd64.deb
 
     - name: 'Add NodeSource Key'
       apt_key: 
