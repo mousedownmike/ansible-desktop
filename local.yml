@@ -102,10 +102,16 @@
       command:
         cmd: /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
-    - name: 'Gnome Terminal Configuration'
-      become_user: mike
-      command:
-        cmd: dconf load /org/gnome/terminal/ < gnome_terminal_config.txt
+    - name: 'Add Corretto Key'
+      apt_key: 
+        url: https://apt.corretto.aws/corretto.key
+    - name: 'Add Corretto Repository'
+      apt_repository:
+        repo: 'deb https://apt.corretto.aws stable main' 
+        update_cache: yes
+    - name: 'Corretto JDK 11'
+      apt:
+        name: java-11-amazon-corretto-jdk
 # TODO Mysql
 # TODO Sublime Key Bindings
 # TODO Sublime Packages
