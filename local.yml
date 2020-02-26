@@ -19,6 +19,7 @@
           - git
           - solaar
           - python-pip
+          - gnome-tweak-tool
     - name: Ensure botocore and boto3 modules are installed
       pip:
         name: [ "boto3", "botocore"]
