@@ -22,6 +22,7 @@
           - solaar
           - python-pip
           - gnome-tweak-tool
+          - tmux
     - name: Ensure botocore and boto3 modules are installed
       pip:
         name: [ "boto3", "botocore"]
