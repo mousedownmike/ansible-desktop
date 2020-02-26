@@ -62,9 +62,9 @@
         creates: ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
 
     - name: 'Configure INotify'
-      command:
-        cmd: echo "fs.inotify.max_user_watches = 524288" >> /etc/sysctl.d/idea.conf
-        creates: /etc/sysctl.d/idea.conf
+      copy:
+        src: files/inotify-idea.conf
+        dest: /etc/sysctl.d/idea.conf
 
     - name: 'Add NodeSource Key'
       apt_key: 
