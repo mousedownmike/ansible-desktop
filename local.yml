@@ -125,10 +125,9 @@
     - name: 'Corretto JDK 11'
       apt:
         name: java-11-amazon-corretto-jdk
-# TODO Mysql
-# TODO Sublime Key Bindings
-# TODO Sublime Packages
+
+    - name: 'Gnome Terminal'
+      include: terminal.yml
 # TODO SDKMAN!
 # TODO Gradle
 # TODO Groovy
-# TODO JDK 11
