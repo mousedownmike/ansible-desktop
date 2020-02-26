@@ -18,6 +18,7 @@
   changed_when: falsedconf list "/org/gnome/terminal/legacy/profiles:/"
 
 - name: Set profile name
+  become_user: mike
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/{{profileid}}visible-name"
     value: "'Default'"
