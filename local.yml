@@ -100,6 +100,11 @@
     - name: 'Install AWS CLI'
       command:
         cmd: /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+    -name: 'Gnome Terminal Configuration'
+      become_user: mike
+      command:
+        cmd: dconf load /org/gnome/terminal/ < gnome_terminal_config.txt
 # TODO Mysql
 # TODO Sublime Key Bindings
 # TODO Sublime Packages
