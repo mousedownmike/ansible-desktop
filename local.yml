@@ -106,6 +106,10 @@
       get_url:
         url: https://packagecontrol.io/Package%20Control.sublime-package
         dest: "/home/mike/.config/sublime-text-3/Installed Packages/Package Control.sublime-package"
+    - name: 'Sublime: Default Packages'
+      copy:
+        src: "files/Package Control.sublime-settings"
+        dest: "/home/mike/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
 
     - name: 'Download AWS CLI Bundle'
       get_url: 
