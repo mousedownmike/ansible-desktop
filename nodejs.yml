@@ -12,10 +12,11 @@
   apt:
     name: nodejs
 
+# http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
   become_user: "{{ ansible_user }}"
   command: npm config set prefix ~/.local
-  
+
 - name: 'Install "angular-cli"'
   become_user: "{{ ansible_user }}"
   npm:
