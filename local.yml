@@ -14,6 +14,11 @@
     smartsync_version: "4_0_3"
     ansible_user: mike
   tasks:
+    - name: 'Configure bash'
+      copy:
+        src: files/.profile
+        dest: /home/{{ ansible_user }}/.profile
+
     - name: 'Install packages'
       apt:
         pkg:
