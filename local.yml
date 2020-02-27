@@ -105,7 +105,7 @@
     - name: 'Sublime: Package Control'
       get_url:
         url: https://packagecontrol.io/Package%20Control.sublime-package
-        dest: "/home/mike/.config/sublime-text-3/Installed Packages/"
+        dest: "/home/mike/.config/sublime-text-3/Installed Packages/Package Control.sublime-package"
 
     - name: 'Download AWS CLI Bundle'
       get_url: 
