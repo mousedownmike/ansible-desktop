@@ -1,4 +1,10 @@
 ---
+- name: Go
+  snap:
+    name: go
+    classic: yes
+    channel: latest/stable
+
 - name: 'Add Nodeource Key'
   apt_key: 
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
@@ -22,3 +28,15 @@
   npm:
     name: "@angular/cli"
     global: yes
+- name: 'Add Corretto Key'
+  apt_key: 
+    url: https://apt.corretto.aws/corretto.key
+
+- name: 'Add Corretto Repository'
+  apt_repository:
+    repo: 'deb https://apt.corretto.aws stable main' 
+    update_cache: yes
+
+- name: 'Corretto JDK 11'
+  apt:
+    name: java-11-amazon-corretto-jdk

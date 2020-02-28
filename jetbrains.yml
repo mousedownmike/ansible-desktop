@@ -1,0 +1,21 @@
+---
+- name: 'Download JetBrains Toolbox {{ jb_version }}'
+  become_user: "{{ ansible_user }}"
+  get_url:
+    url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-{{ jb_version }}.tar.gz
+    dest: /tmp/jetbrains-toolbox-{{ jb_version }}.tar.gz
+    checksum: sha256:'{{ jb_sha256 }}'
+- name: 'Extract JetBrains Toolbox {{ jb_version }}'
+  become_user: "{{ ansible_user }}"
+  unarchive:
+    src: /tmp/jetbrains-toolbox-{{ jb_version }}.tar.gz
+    dest: /tmp
+- name: 'Install JetBrains Toolbox {{ jb_version }}'
+  become_user: "{{ ansible_user }}"
+  command:
+    cmd: /tmp/jetbrains-toolbox-{{ jb_version }}/jetbrains-toolbox
+    creates: ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+- name: 'Configure INotify'
+  copy:
+    src: files/inotify-idea.conf
+    dest: /etc/sysctl.d/idea.conf

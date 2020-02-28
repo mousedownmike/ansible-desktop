@@ -1,0 +1,7 @@
+---
+- name: 'Install Smart Git {{ smartgit_version }}'
+  apt:
+    deb: 'https://www.syntevo.com/downloads/smartgit/smartgit-{{smartgit_version}}.deb'
+- name: 'Install Smart Sync {{ smartsync_version }}'
+  apt:
+    deb: 'https://www.syntevo.com/downloads/smartsynchronize/smartsynchronize-{{smartsync_version}}.deb'

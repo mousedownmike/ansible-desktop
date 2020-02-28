@@ -1,0 +1,10 @@
+---
+- name: 'Download Terraform {{ tf_version }}'
+  get_url:
+    url: https://releases.hashicorp.com/terraform/{{ tf_version }}/terraform_{{ tf_version }}_linux_amd64.zip
+    dest: /tmp/terraform_{{ tf_version }}_linux_amd64.zip
+    checksum: sha256:'{{ tf_sha256 }}'
+- name: 'Extract Terraform {{ tf_version }}'
+  unarchive:
+    src: /tmp/terraform_{{ tf_version }}_linux_amd64.zip
+    dest: /usr/local/bin
