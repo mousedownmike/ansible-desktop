@@ -19,36 +19,36 @@
         src: files/.profile
         dest: /home/{{ ansible_user }}/.profile
 
-    - name: 'Install packages'
-      apt:
-        pkg:
-          - htop
-          - unzip
-          - git
-          - solaar
-          - python-pip
-          - gnome-tweak-tool
-          - tmux
+    # - name: 'Install packages'
+    #   apt:
+    #     pkg:
+    #       - htop
+    #       - unzip
+    #       - git
+    #       - solaar
+    #       - python-pip
+    #       - gnome-tweak-tool
+    #       - tmux
 
-    - name: Ensure botocore, boto3, and psutil modules are installed
-      pip:
-        name: [ "boto3", "botocore", "psutil"]
-        extra_args:  "--user"
+    # - name: Ensure botocore, boto3, and psutil modules are installed
+    #   pip:
+    #     name: [ "boto3", "botocore", "psutil"]
+    #     extra_args:  "--user"
 
-    - name: 'AWS CLI'
-      include: aws-cli.yml
-    - name: 'JetBrains'
-      include: jetbrains.yml
-    - name: 'Programming Languages'
-      include: languages.yml
-    - name: 'Sublime'
-      include: sublime.yml
-    - name: 'syntevo Tools - SmartGit and SmartSynchronize'
-      include: syntevo.yml
-    - name: 'Gnome Terminal'
-      include: terminal.yml
-    - name: 'Terraform'
-      include: terraform.yml
+    # - name: 'AWS CLI'
+    #   include: aws-cli.yml
+    # - name: 'JetBrains'
+    #   include: jetbrains.yml
+    # - name: 'Programming Languages'
+    #   include: languages.yml
+    # - name: 'Sublime'
+    #   include: sublime.yml
+    # - name: 'syntevo Tools - SmartGit and SmartSynchronize'
+    #   include: syntevo.yml
+    # - name: 'Gnome Terminal'
+    #   include: terminal.yml
+    # - name: 'Terraform'
+    #   include: terraform.yml
     - name: 'Zoom conferencing'
       include: zoom.yml
 
