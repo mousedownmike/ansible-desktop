@@ -35,6 +35,10 @@
         name: [ "boto3", "botocore", "psutil"]
         extra_args:  "--user"
 
+    - name: Telegram
+      snap:
+        name: telegram-desktop
+        channel: latest/stable
     - name: 'AWS CLI'
       include: aws-cli.yml
     - name: 'JetBrains'
