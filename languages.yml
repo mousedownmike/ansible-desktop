@@ -18,6 +18,20 @@
   apt:
     name: nodejs
 
+- name: 'Add Yarn Key'
+  apt_key: 
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+
+- name: 'Add Yarn Repository'
+  apt_repository:
+    repo: 'deb https://dl.yarnpkg.com/debian/ stable main' 
+    update_cache: yes
+
+- name: 'Install Yarn'
+  apt:
+    name: yarn
+
+
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
   become_user: "{{ ansible_user }}"
