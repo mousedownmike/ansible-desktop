@@ -34,7 +34,7 @@
 
 - name: 'Add Corretto Repository'
   apt_repository:
-    repo: 'deb https://apt.corretto.aws stable main' 
+    repo: 'deb [arch=amd64] https://apt.corretto.aws stable main' 
     update_cache: yes
 
 - name: 'Corretto JDK 11'
