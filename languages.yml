@@ -36,7 +36,7 @@
   get_url: 
     url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
     dest: /tmp/rustup-init.sh
-    mode: u+rwx
+    mode: 0755
 
 
 - name: 'Install Rust'
