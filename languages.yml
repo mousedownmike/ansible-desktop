@@ -32,11 +32,13 @@
     name: yarn
 
 - name: 'Download Rust'
+  become_user: "{{ ansible_user }}"
   get_url: 
     url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
     dest: /tmp/rustup-init.sh
 
 - name: 'Install Rust'
+  become_user: "{{ ansible_user }}"
   command: 
     cmd: /tmp/rustup-init.sh
 
