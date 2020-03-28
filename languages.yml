@@ -36,12 +36,13 @@
   get_url: 
     url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
     dest: /tmp/rustup-init.sh
+    mode: 'u+rwx'
+
 
 - name: 'Install Rust'
   become_user: "{{ ansible_user }}"
   command: 
     cmd: /tmp/rustup-init.sh
-
 
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
