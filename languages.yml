@@ -31,6 +31,15 @@
   apt:
     name: yarn
 
+- name: 'Download Rust'
+  get_url: 
+    url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+    dest: /tmp/rustup-init.sh
+
+- name: 'Install Rust'
+  command: 
+    cmd: /tmp/rustup-init.sh
+
 
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
