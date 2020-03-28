@@ -34,7 +34,7 @@
 - name: 'Download Rust'
   become_user: "{{ ansible_user }}"
   get_url: 
-    url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+    url: https://sh.rustup.rs
     dest: /tmp/rustup-init.sh
     mode: 0755
 
