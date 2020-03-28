@@ -42,7 +42,7 @@
 - name: 'Install Rust'
   become_user: "{{ ansible_user }}"
   command: 
-    cmd: /tmp/rustup-init.sh
+    cmd: /tmp/rustup-init.sh -y
 
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
