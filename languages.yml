@@ -5,6 +5,11 @@
     classic: yes
     channel: latest/stable
 
+- name: Hugo
+  snap:
+    name: hugo
+    channel: latest/stable
+
 - name: 'Add Nodeource Key'
   apt_key: 
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
