@@ -12,6 +12,7 @@
     node_version: 10.x
     smartgit_version: "19_1_6"
     smartsync_version: "4_0_3"
+    hugo_version: 0.68.3
     ansible_user: mike
   tasks:
     - name: 'Configure bash'

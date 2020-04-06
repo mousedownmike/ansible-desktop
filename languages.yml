@@ -5,10 +5,9 @@
     classic: yes
     channel: latest/stable
 
-- name: Hugo
-  snap:
-    name: hugo
-    channel: latest/stable
+- name: 'Hugo {{hugo_version}}'
+  apt:
+    deb: https://github.com/gohugoio/hugo/releases/download/v{{hugo_version}}/hugo_extended_{{hugo_version}}_Linux-64bit.deb
 
 - name: 'Add Nodeource Key'
   apt_key: 
