@@ -58,6 +58,13 @@
   npm:
     name: "@angular/cli"
     global: yes
+
+- name: 'Install Sass'
+  become_user: "{{ ansible_user }}"
+  npm:
+    name: sass
+    global: yes
+
 - name: 'Add Corretto Key'
   apt_key: 
     url: https://apt.corretto.aws/corretto.key
