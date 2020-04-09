@@ -30,6 +30,7 @@
           - python-pip
           - gnome-tweak-tool
           - tmux
+          - curl
 
     - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
