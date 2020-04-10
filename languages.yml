@@ -35,22 +35,10 @@
   apt:
     name: yarn
 
-- name: 'Download Rust'
-  become_user: "{{ ansible_user }}"
-  get_url: 
-    url: https://sh.rustup.rs
-    dest: /tmp/rustup-init.sh
-    mode: 0755
-
-- name: 'Install Epiphany (webkit)'
-  flatpak:
-    name: https://nightly.gnome.org/repo/appstream/org.gnome.Epiphany.Devel.flatpakref
-    state: present
-
-- name: 'Install Rust'
-  become_user: "{{ ansible_user }}"
-  command: 
-    cmd: /tmp/rustup-init.sh -y
+- name: 'Install GNOME Web (epiphany)'
+  snap:
+    name: epiphany
+    channel: latest/stable
 
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
@@ -81,3 +69,15 @@
 - name: 'Corretto JDK 11'
   apt:
     name: java-11-amazon-corretto-jdk
+
+- name: 'Download Rust'
+  become_user: "{{ ansible_user }}"
+  get_url: 
+    url: https://sh.rustup.rs
+    dest: /tmp/rustup-init.sh
+    mode: 0755
+    
+- name: 'Install Rust'
+  become_user: "{{ ansible_user }}"
+  command: 
+    cmd: /tmp/rustup-init.sh -y

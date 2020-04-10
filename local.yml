@@ -38,7 +38,6 @@
           - gnome-tweak-tool
           - tmux
           - curl
-          - flatpak
 
     - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
