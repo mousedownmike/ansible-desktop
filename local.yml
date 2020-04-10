@@ -19,13 +19,13 @@
       copy:
         src: files/.profile
         dest: /home/{{ ansible_user }}/.profile
-        owner: {{ ansible_user }} 
+        owner: "{{ ansible_user }}" 
 
     - name: 'Configure bash aliases'
       copy:
         src: files/.bash_aliases
         dest: /home/{{ ansible_user }}/.bash_aliases
-        owner: {{ ansible_user }} 
+        owner: "{{ ansible_user }}" 
 
     - name: 'Install packages'
       apt:
