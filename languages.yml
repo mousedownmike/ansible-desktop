@@ -42,6 +42,10 @@
     dest: /tmp/rustup-init.sh
     mode: 0755
 
+- name: 'Install Epiphany (webkit)'
+  flatpak:
+    name: https://nightly.gnome.org/repo/appstream/org.gnome.Epiphany.Devel.flatpakref
+    state: present
 
 - name: 'Install Rust'
   become_user: "{{ ansible_user }}"
