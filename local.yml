@@ -52,7 +52,7 @@
     - name: Inkscape
       snap:
         name: inkscape
-        channel: candidate
+        channel: latest/stable
 
     - name: 'AWS CLI'
       include: aws-cli.yml
