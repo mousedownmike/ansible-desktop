@@ -7,5 +7,5 @@
     path: /home/{{ ansible_user }}/.config/zoomus.conf
     section: General
     option: scaleFactor
-    value: 2
+    value: "2"
     backup: yes
