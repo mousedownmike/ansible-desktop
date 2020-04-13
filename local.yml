@@ -54,6 +54,12 @@
         name: inkscape
         channel: latest/stable
 
+    - name: Asciinema
+      snap:
+        name: asciinema
+        channel: latest/stable
+        classic: yes
+        
     - name: 'AWS CLI'
       include: aws-cli.yml
     - name: 'JetBrains'
