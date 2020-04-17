@@ -33,6 +33,7 @@
           - htop
           - unzip
           - git
+          - git-lfs
           - solaar
           - python-pip
           - gnome-tweak-tool
