@@ -4,10 +4,10 @@
     deb: '{{ docker_download }}/containerd.io_{{ containerd_version }}_amd64.deb'
 - name: 'Install docker-ce-cli'
   apt:
-    deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}~ubuntu-disco_amd64.deb'
+    deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}.deb'
 - name: 'Install docker-ce'
   apt:
-    deb: '{{ docker_download }}/docker-ce_{{ docker_version }}~ubuntu-disco_amd64.deb'
+    deb: '{{ docker_download }}/docker-ce_{{ docker_version }}.deb'
     
 - name: 'Download docker-machine'
   get_url:
