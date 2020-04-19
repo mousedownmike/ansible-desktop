@@ -1,43 +1,31 @@
-- hosts: localhost
-  become: true
-  module_defaults:
-    apt:
-      force_apt_get: yes
-  vars:
-    # https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/docker-ce-cli_19.03.8~3-0~ubuntu-bionic_amd64.deb
-    # https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/
-    docker_download: 'https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64'
-    containerd_version: 1.2.13-1
-    docker_version: 19.03.8~3-0
-    machine_version: v0.16.2
-  tasks:
-    - name: 'Install containerd'
-      apt:
-        deb: '{{ docker_download }}/containerd.io_{{ containerd_version }}_amd64.deb'
-    - name: 'Install docker-ce-cli'
-      apt:
-        deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}~ubuntu-disco_amd64.deb'
-    - name: 'Install docker-ce'
-      apt:
-        deb: '{{ docker_download }}/docker-ce_{{ docker_version }}~ubuntu-disco_amd64.deb'
-        
-    - name: 'Download docker-machine'
-      get_url:
-        url: 'https://github.com/docker/machine/releases/download/{{ machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
-        dest: /tmp/docker-machine
+---
+- name: 'Install containerd'
+  apt:
+    deb: '{{ docker_download }}/containerd.io_{{ containerd_version }}_amd64.deb'
+- name: 'Install docker-ce-cli'
+  apt:
+    deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}~ubuntu-disco_amd64.deb'
+- name: 'Install docker-ce'
+  apt:
+    deb: '{{ docker_download }}/docker-ce_{{ docker_version }}~ubuntu-disco_amd64.deb'
+    
+- name: 'Download docker-machine'
+  get_url:
+    url: 'https://github.com/docker/machine/releases/download/{{ machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
+    dest: /tmp/docker-machine
 
-    - name: 'Install docker-machine'  
-      copy:
-        src: /tmp/docker-machine
-        dest: /usr/local/bin/docker-machine
-        mode: a+x
-        backup: yes
+- name: 'Install docker-machine'  
+  copy:
+    src: /tmp/docker-machine
+    dest: /usr/local/bin/docker-machine
+    mode: a+x
+    backup: yes
 
-    - name: 'Add docker group'
-      group:
-        name: 'docker'
+- name: 'Add docker group'
+  group:
+    name: 'docker'
 
-    - name: 'Add ansible_user to group'
-      user: name={{ ansible_user }}
-            groups=docker
-            append=yes
+- name: 'Add ansible_user to group'
+  user: name={{ ansible_user }}
+        groups=docker
+        append=yes
