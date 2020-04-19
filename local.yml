@@ -77,6 +77,8 @@
       include: terraform.yml
     - name: 'Zoom conferencing'
       include: zoom.yml
+    - name: 'Docker'
+      include: docker.yml
 
 # TODO SDKMAN!
 # TODO Gradle
