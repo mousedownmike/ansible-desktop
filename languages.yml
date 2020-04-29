@@ -57,6 +57,12 @@
     name: sass
     global: yes
 
+- name: 'Install Prettier'
+  become_user: "{{ ansible_user }}"
+  npm:
+    name: prettier
+    global: yes
+
 - name: 'Add Corretto Key'
   apt_key: 
     url: https://apt.corretto.aws/corretto.key
