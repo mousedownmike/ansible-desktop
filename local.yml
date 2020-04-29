@@ -43,6 +43,7 @@
           - gnome-tweak-tool
           - tmux
           - curl
+          - gthumb
 
     - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
