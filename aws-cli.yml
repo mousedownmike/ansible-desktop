@@ -1,14 +1,14 @@
 ---
-- name: 'Download AWS CLI Bundle'
+- name: 'Download AWS CLI v2 Bundle'
   get_url: 
-    url: https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-    dest: /tmp/awscli-bundle.zip
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /tmp/awscliv2.zip
 
-- name: 'Extract AWS CLI Bundle'
+- name: 'Extract AWS CLI v2 Bundle'
   unarchive:
-    src: /tmp/awscli-bundle.zip
+    src: /tmp/awscliv2.zip
     dest: /tmp
     
 - name: 'Install AWS CLI'
   command:
-    cmd: /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+    cmd: /tmp/aws/install
