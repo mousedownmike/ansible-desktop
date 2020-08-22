@@ -6,16 +6,16 @@
   vars:
     tf_version: 0.12.28
     tf_sha256: be99da1439a60942b8d23f63eba1ea05ff42160744116e84f46fc24f1a8011b6
-    jb_version: 1.17.7018
-    jb_sha256: 55d1598083a60fb4d2855a764e136b7fa760fb5b8626ad79ac6f4925909e5878
+    jb_version: 1.17.7391
+    jb_sha256: 6d474d55d9cee81e790f728d7801ef69f24e7685c63bbc9484e6e6c1edda29d5
     dropbox_version: 2019.02.14
     node_version: 12.x
     smartgit_version: "19_1_6"
     smartsync_version: "4_0_3"
     hugo_version: 0.68.3
-    docker_download: 'https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64'
+    docker_download: 'https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64'
     containerd_version: 1.2.13-1
-    docker_version: 19.03.8~3-0~ubuntu-bionic_amd64
+    docker_version: 19.03.12~3-0~ubuntu-focal_amd64
     machine_version: v0.16.2
     ansible_user: mike
   tasks:      
