@@ -1,4 +1,9 @@
 ---
+- name: 'Check for AWS CLI v2 install'
+  stat:
+    path: /usr/local/aws-cli/v2/current
+  register: aws_cli_v2
+  
 - name: 'Download AWS CLI v2 Bundle'
   get_url: 
     url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -9,6 +14,12 @@
     src: /tmp/awscliv2.zip
     dest: /tmp
     
-- name: 'Install AWS CLI'
+- name: 'Install AWS CLI v2'
   command:
     cmd: /tmp/aws/install
+  when: not aws_cli_v2.stat.exists
+  
+- name: 'Update AWS CLI v2'
+  command:
+    cmd: /tmp/aws/install --update
+  when: aws_cli_v2.stat.exists
