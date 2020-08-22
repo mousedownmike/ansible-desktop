@@ -18,14 +18,7 @@
     docker_version: 19.03.8~3-0~ubuntu-bionic_amd64
     machine_version: v0.16.2
     ansible_user: mike
-  tasks:
-    - name: symlink /usr/bin/python -> /usr/bin/python3
-      raw: |
-        if [ -f /usr/bin/python3 ] && [ ! -f /usr/bin/python ]; then
-          ln --symbolic /usr/bin/python3 /usr/bin/python; 
-        fi
-      become: true
-      
+  tasks:      
     - name: 'Configure bash profile'
       copy:
         src: files/.profile
@@ -41,7 +34,6 @@
     - name: 'Install packages'
       apt:
         pkg:
-          - python3-pip
           - htop
           - unzip
           - git
