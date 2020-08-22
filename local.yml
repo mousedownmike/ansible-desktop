@@ -34,7 +34,7 @@
     - name: 'Install packages'
       apt:
         pkg:
-          - python-pip
+          - python3-pip
           - htop
           - unzip
           - git
