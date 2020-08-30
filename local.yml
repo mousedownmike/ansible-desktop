@@ -12,7 +12,7 @@
     node_version: 12.x
     smartgit_version: "19_1_6"
     smartsync_version: "4_0_3"
-    hugo_version: 0.68.3
+    hugo_version: 0.74.3
     docker_download: 'https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64'
     containerd_version: 1.2.13-1
     docker_version: 19.03.12~3-0~ubuntu-focal_amd64
