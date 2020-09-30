@@ -1,13 +1,13 @@
 ---
 - name: 'Install containerd'
   apt:
-    deb: '{{ docker_download }}/containerd.io_{{ containerd_version }}_amd64.deb'
+    deb: 'https://download.docker.com/linux/ubuntu/dists/{{ ansible_disribution_release }}/pool/stable/amd64/containerd.io_{{ containerd_version }}_amd64.deb'
 - name: 'Install docker-ce-cli'
   apt:
-    deb: '{{ docker_download }}/docker-ce-cli_{{ docker_version }}.deb'
+    deb: 'https://download.docker.com/linux/ubuntu/dists/{{ ansible_disribution_release }}/pool/stable/amd64/docker-ce-cli_{{ docker_version }}~ubuntu-{{ ansible_disribution_release }}_amd64.deb'
 - name: 'Install docker-ce'
   apt:
-    deb: '{{ docker_download }}/docker-ce_{{ docker_version }}.deb'
+    deb: 'https://download.docker.com/linux/ubuntu/dists/{{ ansible_disribution_release }}/pool/stable/amd64/docker-ce_{{ docker_version }}~ubuntu-{{ ansible_disribution_release }}_amd64.deb'
     
 - name: 'Download docker-machine'
   get_url:
