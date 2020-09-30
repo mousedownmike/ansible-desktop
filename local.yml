@@ -10,8 +10,8 @@
     jb_sha256: 6d474d55d9cee81e790f728d7801ef69f24e7685c63bbc9484e6e6c1edda29d5
     dropbox_version: 2019.02.14
     node_version: 12.x
-    smartgit_version: "19_1_6"
-    smartsync_version: "4_0_3"
+    smartgit_version: "20_1_5"
+    smartsync_version: "4_1_1_1"
     hugo_version: 0.74.3
     docker_download: 'https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64'
     containerd_version: 1.2.13-1
