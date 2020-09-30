@@ -15,7 +15,7 @@
   set_fact:
     profileid: ":b1dcc9dd-5262-4d8d-a863-c897e6d979b9/"
   when: dconfprofiles.stdout == ""
-  changed_when: falsedconf list "/org/gnome/terminal/legacy/profiles:/"
+  changed_when: false
 
 - name: Set profile name
   become_user: mike
