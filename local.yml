@@ -37,12 +37,12 @@
           - htop
           - unzip
           - git
-          - git-lfs
           - solaar
           - gnome-tweak-tool
           - tmux
           - curl
           - tree
+          - python3-pip
 
     - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
