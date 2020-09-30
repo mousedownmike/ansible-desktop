@@ -18,7 +18,13 @@
     docker_version: 19.03.13~3-0
     machine_version: v0.16.2
     ansible_user: mike
-  tasks:      
+  tasks:
+    - name: 'Configure tmux'
+      copy:
+        src: files/.tmux.conf
+        dest: /home/{{ ansible_user }}/.tmux.conf
+        owner: "{{ ansible_user }}" 
+
     - name: 'Configure bash profile'
       copy:
         src: files/.profile

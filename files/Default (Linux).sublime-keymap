@@ -4,5 +4,6 @@
     { "keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
     { "keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": false} },
     { "keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": true} },
+    { "keys": ["ctrl+shift+j"], "command": "join_lines" },
     { "keys": ["ctrl+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} }
 ]
