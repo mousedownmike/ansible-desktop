@@ -4,8 +4,8 @@
     apt:
       force_apt_get: yes
   vars:
-    tf_version: 0.12.29
-    tf_sha256: 872245d9c6302b24dc0d98a1e010aef1e4ef60865a2d1f60102c8ad03e9d5a1d
+    tf_version: 0.13.4
+    tf_sha256: a92df4a151d390144040de5d18351301e597d3fae3679a814ea57554f6aa9b24
     jb_version: 1.18.7455
     jb_sha256: 5d8acef010816cec5082e37cf07607c59cf1534d3fd7d9546d5cbb55149cdd54
     dropbox_version: 2019.02.14
