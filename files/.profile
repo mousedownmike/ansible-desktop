@@ -15,8 +15,8 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
     # activate aws bash command completion if it exists
-    if [ -f "/usr/local/aws/bin/aws_completer" ]; then
-        complete -C '/usr/local/aws/bin/aws_completer' aws
+    if [ -f "/usr/local/bin/aws_completer" ]; then
+        complete -C '/usr/local/bin/aws_completer' aws
     fi
 fi
 
