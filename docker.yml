@@ -13,11 +13,23 @@
   get_url:
     url: 'https://github.com/docker/machine/releases/download/{{ machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
     dest: /tmp/docker-machine
+    
+- name: 'Download docker-compose'
+  get_url:
+    url: 'https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64'
+    dest: /tmp/docker-compose
 
 - name: 'Install docker-machine'  
   copy:
     src: /tmp/docker-machine
     dest: /usr/local/bin/docker-machine
+    mode: a+x
+    backup: yes
+
+- name: 'Install docker-compose'  
+  copy:
+    src: /tmp/docker-compose
+    dest: /usr/local/bin/docker-compose
     mode: a+x
     backup: yes
 
