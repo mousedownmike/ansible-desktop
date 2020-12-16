@@ -11,7 +11,7 @@
     
 - name: 'Download docker-machine'
   get_url:
-    url: 'https://github.com/docker/machine/releases/download/{{ machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
+    url: 'https://github.com/docker/machine/releases/download/{{ docker_machine_version }}/docker-machine-{{ ansible_system }}-{{ ansible_machine }}'
     dest: /tmp/docker-machine
     
 - name: 'Download docker-compose'
