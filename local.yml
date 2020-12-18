@@ -17,8 +17,8 @@
     node_version: 12.x
     smartgit_version: "20_1_5"
     smartsync_version: "4_1_1_1"
-    tf_sha256: 6f380c0c7a846f9e0aedb98a2073d2cbd7d1e2dc0e070273f9325f1b69e668b2
-    tf_version: 0.14.2
+    tf_sha256: aa7b6cb6f366ffb920083b2a9739079ee560240ca31b580fe422af4af28cbb5a
+    tf_version: 0.14.3
   tasks:
     - name: 'Configure tmux'
       copy:
