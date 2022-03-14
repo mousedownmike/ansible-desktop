@@ -58,10 +58,8 @@
       include: languages.yml
     - name: 'Sublime'
       include: sublime.yml
-    - name: 'syntevo Tools - SmartGit and SmartSynchronize'
+    - name: 'syntevo Tools - SmartGit'
       include: syntevo.yml
-    - name: 'Gnome Terminal'
-      include: terminal.yml
     - name: 'Terraform'
       include: terraform.yml
     - name: 'Docker'
