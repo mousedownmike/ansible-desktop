@@ -13,14 +13,14 @@
   become_user: "{{ ansible_user }}"
   copy:
     src: "files/Default (Linux).sublime-keymap"
-    dest: "/home/{{ ansible_user }}/.config/sublime-text-4/Packages/User/"
+    dest: "/home/{{ ansible_user }}/.config/sublime-text/Packages/User/"
 - name: 'Sublime Settings'
   become_user: "{{ ansible_user }}"
   copy:
     src: files/Preferences.sublime-settings
-    dest: /home/{{ ansible_user }}/.config/sublime-text-4/Packages/User/
+    dest: /home/{{ ansible_user }}/.config/sublime-text/Packages/User/
 - name: 'Sublime: Package Control'
   become_user: "{{ ansible_user }}"
   get_url:
     url: https://packagecontrol.io/Package%20Control.sublime-package
-    dest: "/home/{{ ansible_user }}/.config/sublime-text-4/Installed Packages/Package Control.sublime-package"
+    dest: "/home/{{ ansible_user }}/.config/sublime-text/Installed Packages/Package Control.sublime-package"
