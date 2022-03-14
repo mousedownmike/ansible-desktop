@@ -14,13 +14,6 @@
     url: 'https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64'
     dest: /tmp/docker-compose
 
-- name: 'Install docker-machine'  
-  copy:
-    src: /tmp/docker-machine
-    dest: /usr/local/bin/docker-machine
-    mode: a+x
-    backup: yes
-
 - name: 'Install docker-compose'  
   copy:
     src: /tmp/docker-compose
