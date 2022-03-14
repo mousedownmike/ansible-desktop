@@ -5,27 +5,18 @@
       force_apt_get: yes
   vars:
     ansible_user: mike
-    containerd_version: 1.3.7-1
-    docker_compose_version: 1.27.4
-    docker_version: 19.03.13~3-0
+    containerd_version: 1.5.10-1
+    docker_compose_version: v2.3.3
+    docker_version: 20.10.6~3-0
     docker_download: 'https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64'
     docker_machine_version: v0.16.2
-    dropbox_version: 2019.02.14
-    hugo_version: 0.74.3
-    jb_sha256: 5d8acef010816cec5082e37cf07607c59cf1534d3fd7d9546d5cbb55149cdd54
-    jb_version: 1.18.7455
-    node_version: 12.x
-    smartgit_version: "20_1_5"
-    smartsync_version: "4_1_1_1"
-    tf_sha256: aa7b6cb6f366ffb920083b2a9739079ee560240ca31b580fe422af4af28cbb5a
-    tf_version: 0.14.3
+    hugo_version: 0.94.2
+    jb_sha256: 3b2cfc340d9116699d9e83173ea79d325df7f940d6f446d34076833608a99139
+    jb_version: 1.22.10970
+    node_version: 14.x
+    smartgit_version: "21_2_2"
+    tf_version: 1.1.7
   tasks:
-    - name: 'Configure tmux'
-      copy:
-        src: files/.tmux.conf
-        dest: /home/{{ ansible_user }}/.tmux.conf
-        owner: "{{ ansible_user }}" 
-
     - name: 'Configure bash profile'
       copy:
         src: files/.profile
@@ -46,7 +37,6 @@
           - git
           - solaar
           - gnome-tweak-tool
-          - tmux
           - curl
           - tree
           - python3-pip
@@ -74,8 +64,6 @@
       include: terminal.yml
     - name: 'Terraform'
       include: terraform.yml
-    - name: 'Zoom conferencing'
-      include: zoom.yml
     - name: 'Docker'
       include: docker.yml
 
