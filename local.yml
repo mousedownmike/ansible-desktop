@@ -39,6 +39,7 @@
           - curl
           - tree
           - python3-pip
+          - gnome-sushi
 
     - name: Ensure botocore, boto3, and psutil modules are installed
       pip:
