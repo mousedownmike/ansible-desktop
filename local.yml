@@ -64,7 +64,3 @@
       include: terraform.yml
     - name: 'Docker'
       include: docker.yml
-
-# TODO SDKMAN!
-# TODO Gradle
-# TODO Groovy
