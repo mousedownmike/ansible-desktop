@@ -9,10 +9,10 @@
     docker_compose_version: v2.3.3
     docker_version: 20.10.6~3-0
     docker_download: 'https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64'
-    hugo_version: 0.94.2
+    hugo_version: 0.97.3
     jb_sha256: 3b2cfc340d9116699d9e83173ea79d325df7f940d6f446d34076833608a99139
     jb_version: 1.22.10970
-    node_version: 14.x
+    node_version: 16.x
     smartgit_version: "21_2_2"
     tf_version: 1.1.7
   tasks:
