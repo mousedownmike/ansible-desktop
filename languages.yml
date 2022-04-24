@@ -20,9 +20,10 @@
     state: present
     update_cache: true
 
-- name: 'Install NodeJS'
+- name: 'Install NodeJS {{ node_version }}'
   apt:
     name: nodejs
+    state: latest
 
 - name: 'Add Yarn Key'
   apt_key: 
@@ -37,33 +38,10 @@
   apt:
     name: yarn
 
-- name: 'Install GNOME Web (epiphany)'
-  snap:
-    name: epiphany
-    channel: latest/stable
-
 # http://michaelb.org/the-right-way-to-do-global-npm-install-without-sudo/
 - name: 'Set Node Prefix'
   become_user: "{{ ansible_user }}"
   command: npm config set prefix ~/.local
-
-- name: 'Install "angular-cli"'
-  become_user: "{{ ansible_user }}"
-  npm:
-    name: "@angular/cli"
-    global: yes
-
-- name: 'Install Sass'
-  become_user: "{{ ansible_user }}"
-  npm:
-    name: sass
-    global: yes
-
-- name: 'Install Prettier'
-  become_user: "{{ ansible_user }}"
-  npm:
-    name: prettier
-    global: yes
 
 - name: 'Add Corretto Key'
   apt_key: 
@@ -77,6 +55,12 @@
 - name: 'Corretto JDK 11'
   apt:
     name: java-11-amazon-corretto-jdk
+    state: latest
+
+- name: 'Corretto JDK 17'
+  apt:
+    name: java-17-amazon-corretto-jdk
+    state: latest
 
 - name: 'Download Rust'
   become_user: "{{ ansible_user }}"
